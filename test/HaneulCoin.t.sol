@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
 
-import {Test,console} from "forge-std/Test.sol";
+import {Test, console} from "forge-std/Test.sol";
 import {HaneulCoin} from "../src/HaneulCoin.sol";
 
 contract HaneulCoinTest is Test {
@@ -70,5 +70,4 @@ contract HaneulCoinTest is Test {
         vm.expectRevert("HaneulCoin: Sender is not whitelisted");
         token.transfer(owner, transferAmount / 2);
     }
-
 }

@@ -33,15 +33,11 @@ contract HaneulCoin is ERC20, Ownable {
 
     // --- Checkpoint Logic ---
 
-    function _update(
-        address from,
-        address to,
-        uint256 value
-    ) internal virtual override {
+    function _update(address from, address to, uint256 value) internal virtual override {
         if (from != address(0)) {
             require(isWhitelisted[from], "HaneulCoin: Sender is not whitelisted");
         }
-        
+
         if (to != address(0)) {
             require(isWhitelisted[to], "HaneulCoin: Receiver is not whitelisted");
         }
